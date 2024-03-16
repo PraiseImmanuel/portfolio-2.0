@@ -32,22 +32,22 @@ const aboutData = [
       {
         title: "Core Technologies",
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <SiTypescript />,
-          <SiGithub />,
+          <FaHtml5 key={0} />,
+          <FaCss3 key={1} />,
+          <FaJs key={2} />,
+          <SiTypescript key={3} />,
+          <SiGithub key={4} />,
         ],
       },
       {
         title: "Frameworks",
         icons: [
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiTailwindcss />,
-          <SiFramer />,
-          <SiJquery />,
-          <SiBootstrap />,
+          <FaReact key={5} />,
+          <SiNextdotjs key={6} />,
+          <SiTailwindcss key={7} />,
+          <SiFramer key={8} />,
+          <SiJquery key={9} />,
+          <SiBootstrap key={10} />,
         ],
       },
     ],
@@ -252,13 +252,13 @@ const About = () => {
                 </div>
                 <div
                   className="py-2 xl:py-6 flex flex-col gap-y-2
-          xl:gap-y-4 items-center xl:items-start"
+                  xl:gap-y-4 items-center xl:items-start"
                 >
                   {aboutData[itemIndex].info.map((item, index) => (
                     <div
                       key={index}
                       className="flex-1 flex flex-col 
-              md:flex-row max-w-max gap-x-2 items-center text-white/60"
+                      md:flex-row max-w-max gap-x-2 items-center text-white/60"
                     >
                       <div className="font-light mb-2 md:mb-0">
                         {item.title}
