@@ -42,7 +42,7 @@ items-center justify-center h-full'
                 className="group-hover:-translate-y-[120px] group-hover:opacity-0
                 transition-all duration-500"
               >
-                Let's talk
+                Let&apos;s talk
               </span>
               <BsArrowRight
                 className="-translate-y-[120%] opacity-0 group-hover:flex
