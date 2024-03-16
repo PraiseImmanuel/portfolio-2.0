@@ -234,8 +234,8 @@ const About = () => {
                 <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
                   {aboutData.map((item, index) => (
                     <div
-                      onClick={() => setItemIndex(index)}
                       key={index}
+                      onClick={() => setItemIndex(index)}
                       className={`cursor-pointer capitalize after:left-0 xl:text-lg 
                 relative after:w-8 after:h-[2px] after:absolute after:-bottom-1  ${
                   itemIndex !== index && "after:bg-white"
@@ -267,7 +267,7 @@ const About = () => {
                       <div className="font-[600]">{item.stage}</div>
                       <div className="flex gap-x-4">
                         {item.icons?.map((icon, index) => (
-                          <div className="text-white text-2xl" key={index}>
+                          <div key={index} className="text-white text-2xl">
                             {icon}
                           </div>
                         ))}

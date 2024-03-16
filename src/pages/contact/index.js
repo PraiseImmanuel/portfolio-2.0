@@ -18,7 +18,7 @@ items-center justify-center h-full'
             exit="hidden"
             className="h2 text-center mb-12"
           >
-            Let's <span className="text-accent">Connect.</span>
+            Let&apos;s <span className="text-accent">Connect.</span>
           </motion.h2>
           <motion.form
             variants={fadeIn("up", 0.4)}
