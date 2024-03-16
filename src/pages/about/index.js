@@ -82,22 +82,17 @@ const aboutData = [
     title: "credentials",
     info: [
       {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
+        title: "Modern React with Redux - Udemy",
+        stage: "2022",
       },
       {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
-      },
-      {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
+        title: "Javascript Algorithms and Data Structures - Freecodecamp",
+        stage: "2022",
       },
     ],
   },
 ];
 
-import Avatar from "../../components/Avatar";
 import Circles from "../../components/Circles";
 
 import { motion } from "framer-motion";

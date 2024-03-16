@@ -8,7 +8,7 @@ import Header from "../components/Header";
 
 const Home = () => {
   return (
-    <div className="bg-primary/60 min-h-[700px] md:min-h-screen">
+    <div className="bg-primary/30 min-h-[700px] md:min-h-screen">
       <div
         className="w-full min-h-[700px] md:min-h-screen bg-gradient-to-r from-primary/10 
         via-black/30 to-black/10 xl:p-0 relative"
@@ -40,7 +40,7 @@ const Home = () => {
               >
                 Creating visually stunning web applications is an art form. From
                 sleek layouts to captivating animations, every element is
-                carefully crafted to ensure functionality and aesthetic appeal.
+                carefully crafted to ensure functional and aesthetic appeal.
               </motion.p>
               {/* Btn */}
               <div className="flex justify-center xl:hidden relative">
