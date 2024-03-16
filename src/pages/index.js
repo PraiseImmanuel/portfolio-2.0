@@ -36,7 +36,7 @@ const Home = () => {
                 initial="hidden"
                 animate="show"
                 exit="hidden"
-                className="max-w-sm xl:max-w-lg mx-auto xl:mx-0 mb-10 xl:mb-16"
+                className="max-w-[335px] xl:max-w-lg mx-auto xl:mx-0 mb-10 xl:mb-16"
               >
                 Creating visually stunning web applications is an art form. From
                 sleek layouts to captivating animations, every element is
