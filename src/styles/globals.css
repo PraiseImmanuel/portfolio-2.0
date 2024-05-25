@@ -37,10 +37,10 @@
   }
   .btn,
   .input {
-    @apply h-[52px];
+    @apply h-[48px];
   }
   .input {
-    @apply w-full h-[52px] rounded-lg pl-6 capitalize;
+    @apply w-full h-[52px] rounded-lg pl-6;
   }
   .input,
   .textarea {

@@ -1,14 +1,35 @@
 import React from "react";
-import Image from "next/image";
 import ProjectsBtn from "../components/ProjectsBtn";
-import Avatar from "../components/Avatar";
-import { easeInOut, motion } from "framer-motion";
+import {
+  animate,
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+} from "framer-motion";
 import { fadeIn } from "../../variants";
 import Header from "../components/Header";
+import { useEffect } from "react";
+import useMediaQuery from "../lib/hooks/useMediaQuery";
+
+const COLORS = ["#4b3792", "#3b2d71", "#dd335c90", "#2e2257"];
 
 const Home = () => {
+  const isSmallScreen = useMediaQuery("(max-width: 1199px)");
+  const color = useMotionValue(COLORS[0]);
+  const backgroundImage = useMotionTemplate`radial-gradient(200% 135% at 50% 0%, #020617 50%, ${color} 100%)`;
+  useEffect(() => {
+    animate(color, COLORS, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
+  }, []);
   return (
-    <div className="bg-primary/30 min-h-[700px] md:min-h-screen">
+    <motion.div
+      style={{ backgroundImage: isSmallScreen ? backgroundImage : undefined }}
+      className="bg-primary/30 min-h-[700px] md:min-h-screen"
+    >
       <div
         className="w-full min-h-[700px] md:min-h-screen bg-gradient-to-r from-primary/10 
         via-black/30 to-black/10 xl:p-0 relative"
@@ -43,7 +64,7 @@ const Home = () => {
                 carefully crafted to ensure functional and aesthetic appeal.
               </motion.p>
               {/* Btn */}
-              <div className="flex justify-center xl:hidden relative">
+              <div className="flex pb-32 justify-center xl:hidden relative">
                 <ProjectsBtn />
               </div>
               <motion.div
@@ -77,7 +98,7 @@ const Home = () => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

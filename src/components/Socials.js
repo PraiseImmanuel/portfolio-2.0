@@ -16,19 +16,19 @@ import {
 const links = [
   {
     svg: <RiLinkedinBoxFill />,
-    route: "",
+    route: "https://www.linkedin.com/in/praise-immanuel-919b99209/",
   },
   {
     svg: <RiGithubFill />,
-    route: "",
+    route: "https://github.com/PraiseImmanuel",
   },
   {
     svg: <RiWhatsappFill />,
-    route: "",
+    route: "https://wa.me/+23457422372",
   },
   {
     svg: <RiTwitterXFill className="text-lg" />,
-    route: "",
+    route: "https://x.com/_PraiseImmanuel",
   },
 ];
 
@@ -39,7 +39,8 @@ const Socials = () => {
         <Link
           key={index}
           href={item.route}
-          className="hover:text-accent transition-all duration-300"
+          className="hover:text-accent transition-all duration-300 cursor-pointer"
+          target="_blank"
         >
           {item.svg}
         </Link>

@@ -49,7 +49,7 @@ const WorkSlider = () => {
               alt=""
             />
             <div
-              className="absolute inset-0 bg-gradient-to-l 
+              className="absolute inset-0 bg-gradient-to-l group
                     from-transparent via-[#e838cc] to-[#4a22bd] opacity-80
                   transition-all duration-700"
             >
@@ -60,18 +60,10 @@ const WorkSlider = () => {
               >
                 <div className="flex justify-center items-center gap-x-2 text-[13px] tracking-[0.2em]">
                   <div>
-                    <div className="delay-100">LIVE</div>
-                    <div
-                      className="translate-y-0 transition-all
-                        duration-300 delay-150"
-                    >
-                      PROJECT
-                    </div>
+                    <div className="text-left">LIVE</div>
+                    <div className="">PROJECT</div>
                     <div>
-                      <BsArrowRight
-                        className="text-xl translate-y-0 transition-all
-                        duration-300 delay-200"
-                      />
+                      <BsArrowRight className="text-xl group-hover:translate-x-[100%] translate-x-0 transition-all duration-300" />
                     </div>
                   </div>
                 </div>
