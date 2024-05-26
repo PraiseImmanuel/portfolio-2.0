@@ -13,7 +13,7 @@ const Contact = () => {
     message: "",
     name: "",
   });
-
+  const [isLoading, setIsLoading] = useState(false);
   const handleFieldChange = (e) => {
     const { name, value } = e.target;
     console.log(contactField);
@@ -24,6 +24,7 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
+    setIsLoading(true);
     e.preventDefault();
     if (
       contactField.email === "" ||
@@ -32,22 +33,25 @@ const Contact = () => {
       contactField.name === ""
     ) {
       toast.error("All fields are required");
+      setIsLoading(false);
       return;
     }
     try {
       const response = await api.post(
-        "http://localhost:3001/send-email",
+        "https://portfolio-email-sender-q5m2.onrender.com/send-email",
         contactField
       );
       if (response.status === 200) {
         toast.success("Message sent successfully", {
           toastId: "success",
         });
+        setIsLoading(false);
         return { success: true };
       } else {
         toast.error("Failed to send message", {
           toastId: "error",
         });
+        setIsLoading(false);
         return { success: false };
       }
     } catch (error) {
@@ -55,6 +59,7 @@ const Contact = () => {
       toast.error("An error occurred. Please try again later.", {
         toastId: "error",
       });
+      setIsLoading(false);
       return { success: false };
     }
   };
@@ -83,7 +88,7 @@ const Contact = () => {
             <div className="flex gap-x-6 w-full">
               <input
                 type="text"
-                placeholder="name"
+                placeholder="Name"
                 className="input  focus:bg-transparent"
                 onChange={(e) => handleFieldChange(e)}
                 value={contactField.name}
@@ -92,7 +97,7 @@ const Contact = () => {
               <input
                 name="email"
                 type="text"
-                placeholder="email"
+                placeholder="Email"
                 className="input  focus:bg-transparent"
                 onChange={(e) => handleFieldChange(e)}
                 value={contactField.email}
@@ -101,29 +106,32 @@ const Contact = () => {
             <input
               name="subject"
               type="text"
-              placeholder="subject"
+              placeholder="Subject"
               className="input focus:bg-transparent capitalize"
               onChange={(e) => handleFieldChange(e)}
               value={contactField.subject}
             />
             <textarea
               name="message"
-              placeholder="message"
+              placeholder="Message"
               className="textarea  focus:bg-transparent"
               onChange={(e) => handleFieldChange(e)}
               value={contactField.message}
             />
             <button
               type="submit"
-              className="btn rounded-full border border-white/500 max-w-[150px] md:max-w-[170px]
+              className={`btn rounded-full border border-white/500 max-w-[150px] md:max-w-[170px]
               md:px-8 transition-all duration-300 flex items-center justify-center
-              overflow-hidden hover:border-accent group"
+              overflow-hidden hover:border-accent group ${
+                isLoading && "opacity-30"
+              }`}
+              disabled={isLoading}
             >
               <span
                 className="group-hover:-translate-y-[120px] group-hover:opacity-0
                 transition-all duration-500"
               >
-                Let&apos;s talk
+                {"Let's talk"}
               </span>
               <BsArrowRight
                 className="-translate-y-[120%] opacity-0 group-hover:flex
