@@ -1,105 +1,281 @@
-import React from "react";
-import ProjectsBtn from "../components/ProjectsBtn";
+import React, { useState } from "react";
+
 import {
-  animate,
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-} from "framer-motion";
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaReact,
+  FaWordpress,
+  FaFigma,
+  FaGit,
+} from "react-icons/fa";
+
+import {
+  SiNextdotjs,
+  SiFramer,
+  SiAdobexd,
+  SiAdobephotoshop,
+  SiTailwindcss,
+  SiTypescript,
+  SiJquery,
+  SiBootstrap,
+  SiGithub,
+} from "react-icons/si";
+
+import CountUp from "react-countup";
+
+//  data
+const aboutData = [
+  {
+    title: "skills",
+    info: [
+      {
+        title: "Core Technologies",
+        icons: [
+          <FaHtml5 key={0} />,
+          <FaCss3 key={1} />,
+          <FaJs key={2} />,
+          <SiTypescript key={3} />,
+          <SiGithub key={4} />,
+        ],
+      },
+      {
+        title: "Frameworks",
+        icons: [
+          <FaReact key={5} />,
+          <SiNextdotjs key={6} />,
+          <SiTailwindcss key={7} />,
+          <SiFramer key={8} />,
+          <SiJquery key={9} />,
+          <SiBootstrap key={10} />,
+        ],
+      },
+    ],
+  },
+  {
+    title: "awards",
+    info: [
+      {
+        title: "Top Rated Developer 2023",
+        stage: "Zorfts Technologies",
+      },
+    ],
+  },
+  {
+    title: "experience",
+    info: [
+      {
+        title: "Software Engineer Intern - Paritie Innovation Hub",
+        stage: "Sept. 2023 - Present",
+      },
+      {
+        title: "Frontend Developer - Zorfts Technologies",
+        stage: "July 2023 - Present",
+      },
+      {
+        title: "Frontend Intern - Hotels.ng",
+        stage: "Sept. 2022 - Dec. 2023",
+      },
+    ],
+  },
+  {
+    title: "credentials",
+    info: [
+      {
+        title: "Modern React with Redux - Udemy",
+        stage: "2022",
+      },
+      {
+        title: "Javascript Algorithms and Data Structures - Freecodecamp",
+        stage: "2022",
+      },
+    ],
+  },
+];
+
+import Circles from "../components/Circles";
+
+import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import Header from "../components/Header";
-import { useEffect } from "react";
-import useMediaQuery from "../lib/hooks/useMediaQuery";
-
-const COLORS = ["#4b3792", "#3b2d71", "#dd335c90", "#2e2257"];
-
-const Home = () => {
-  const isSmallScreen = useMediaQuery("(max-width: 1199px)");
-  const color = useMotionValue(COLORS[0]);
-  const backgroundImage = useMotionTemplate`radial-gradient(200% 135% at 50% 0%, #020617 50%, ${color} 100%)`;
-  useEffect(() => {
-    animate(color, COLORS, {
-      ease: "easeInOut",
-      duration: 10,
-      repeat: Infinity,
-      repeatType: "mirror",
-    });
-  }, []);
+const About = () => {
+  const [itemIndex, setItemIndex] = useState(0);
+  console.log(itemIndex);
   return (
-    <motion.div
-      style={{ backgroundImage: isSmallScreen ? backgroundImage : undefined }}
-      className="bg-primary/30 min-h-[700px] md:min-h-screen"
-    >
-      <div
-        className="w-full min-h-[700px] md:min-h-screen bg-gradient-to-r from-primary/10 
-        via-black/30 to-black/10 xl:p-0 relative"
-      >
-        <div className="min-h-screen relative">
-          <Header />
-          <div className="flex">
-            <div className="text-center flex flex-col justify-center xl:pt-24 xl:text-left container mx-auto">
-              {/* Title */}
-              <motion.h1
-                variants={fadeIn("down", 0.2)}
-                initial="hidden"
-                animate="show"
-                exit="hidden"
-                className="h1"
-              >
-                <span className="text-accent">Crafting</span> Seamless <br />{" "}
-                Experiences from <br />
-                Concept <span className="text-accent">to Reality</span>.
-              </motion.h1>
+    <div className="min-h-[1100px] md:min-h-[950px] xl:min-h-screen bg-primary/30 text-center xl:text-left">
+      <div className="min-h-[1100px] md:min-h-[950px] xl:min-h-screen relative">
+        <Header />
+        <Circles />
 
-              {/* Sub title */}
+        <div className="pt-5 md:pt-12">
+          <div
+            className="container mx-auto h-full flex flex-col items-center
+            xl:flex-row gap-x-6"
+          >
+            <div className="flex flex-1 flex-col justify-center">
+              <motion.h2
+                initial="hidden"
+                animate="show"
+                exit="hidden"
+                variants={fadeIn("right", 0.2)}
+                className="h2 max-w-[580px] xl:max-w-[initial] "
+              >
+                Turning <span className="text-accent">ideas</span> into digital
+                <span className="text-accent"> products</span>.
+              </motion.h2>
               <motion.p
-                variants={fadeIn("down", 0.3)}
                 initial="hidden"
                 animate="show"
                 exit="hidden"
-                className="max-w-[335px] xl:max-w-lg mx-auto xl:mx-0 mb-10 xl:mb-16"
+                variants={fadeIn("right", 0.4)}
+                className="max-w-[540px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
               >
-                Creating visually stunning web applications is an art form. From
-                sleek layouts to captivating animations, every element is
-                carefully crafted to ensure functional and aesthetic appeal.
+                Hello there! I am Praise Immanuel - a web developer with a knack
+                for turning code into captivating experiences. With a background
+                in Pure and Applied Mathematics and over three years experience.
+                I bring a unique blend of creative flair and analytical prowess
+                to every project.
               </motion.p>
-              {/* Btn */}
-              <div className="flex pb-32 justify-center xl:hidden relative">
-                <ProjectsBtn />
-              </div>
-              <motion.div
-                variants={fadeIn("down", 0.4)}
+              <motion.p
                 initial="hidden"
                 animate="show"
                 exit="hidden"
-                className="hidden xl:flex"
+                variants={fadeIn("right", 0.4)}
+                className="max-w-[500px] xl:-mt-7 mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
               >
-                <ProjectsBtn />
+                I prioritize quality and adhere to industry standards, ensuring
+                the responsiveness of web apps across devices with a
+                mobile-first approach. I have rich experience with ReactJS using
+                TypeScript and Next.js. I am currently seeking intermediate dev
+                roles.
+              </motion.p>
+            </div>
+            <div className="flex-1 transition-all">
+              <motion.div
+                initial="hidden"
+                animate="show"
+                exit="hidden"
+                variants={fadeIn("right", 0.6)}
+                className="hidden md:flex md:max-w-xl xl:max-w--none mx-auto xl:mx-0
+                mb-8"
+              >
+                {/* <div className="flex flex-1 xl:gap-x-6 ">
+                  <div
+                    className="relative flex-1 after:w-[1px] after:h-full 
+                  after:bg-white/10 after:absolute after:top-0 after:right-0"
+                  >
+                    <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                      <CountUp start={0} end={3} duration={5} /> +
+                    </div>
+                    <div
+                      className="text-xs uppercase tracking-[1px] leading-[1.4]
+                max-w-[100px]"
+                    >
+                      Years of experience
+                    </div>
+                  </div>
+                  <div
+                    className="relative flex-1 after:w-[1px] after:h-full 
+                after:bg-white/10 after:absolute after:top-0 after:right-0"
+                  >
+                    <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                      <CountUp start={0} end={250} duration={5} /> +
+                    </div>
+                    <div
+                      className="text-xs uppercase tracking-[1px] leading-[1.4]
+                max-w-[100px]"
+                    >
+                      Satiisfied clients
+                    </div>
+                  </div>
+                  <div
+                    className="relative flex-1 after:w-[1px] after:h-full 
+          after:bg-white/10 after:absolute after:top-0 after:right-0"
+                  >
+                    <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                      <CountUp start={0} end={250} duration={5} /> +
+                    </div>
+                    <div
+                      className="text-xs uppercase tracking-[1px] leading-[1.4]
+                max-w-[100px]"
+                    >
+                      Finished Projects
+                    </div>
+                  </div>
+                  <div
+                    className="relative flex-1 after:w-[1px] after:h-full 
+          after:bg-white/10 after:absolute after:top-0 after:right-0"
+                  >
+                    <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                      <CountUp start={0} end={250} duration={5} /> +
+                    </div>
+                    <div
+                      className="text-xs uppercase tracking-[1px] leading-[1.4]
+                max-w-[100px]"
+                    >
+                      Winning Awards
+                    </div>
+                  </div>
+                </div> */}
+              </motion.div>
+              <motion.div
+                initial="hidden"
+                animate="show"
+                exit="hidden"
+                variants={fadeIn("left", 0.4)}
+                className="flex flex-1 flex-col w-full"
+              >
+                <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
+                  {aboutData.map((item, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setItemIndex(index)}
+                      className={`cursor-pointer capitalize after:left-0 xl:text-lg 
+                relative after:w-8 after:h-[2px] after:absolute after:-bottom-1  ${
+                  itemIndex !== index && "after:bg-white"
+                }
+                ${
+                  itemIndex === index &&
+                  "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
+                } 
+                `}
+                    >
+                      {item.title}
+                    </div>
+                  ))}
+                </div>
+                <div
+                  className="py-2 xl:py-6 flex flex-col gap-y-2
+                  xl:gap-y-4 items-center xl:items-start"
+                >
+                  {aboutData[itemIndex].info.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex-1 flex flex-col 
+                      md:flex-row max-w-max gap-x-2 items-center text-white/60"
+                    >
+                      <div className="font-light mb-2 md:mb-0">
+                        {item.title}
+                      </div>
+                      <div className="hidden md:flex">-</div>
+                      <div className="font-[600]">{item.stage}</div>
+                      <div className="flex gap-x-4">
+                        {item.icons?.map((icon, index) => (
+                          <div key={index} className="text-white text-2xl">
+                            {icon}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           </div>
         </div>
-        {/* Image */}
-        <div className="w-full h-full absolute right-0 bottom-0 overflow-y-hidden">
-          <div
-            className="bg-none xl:bg-explosion xl:bg-right-bottom
-          xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge"
-          ></div>
-          <motion.div
-            variants={fadeIn("up", 0.5)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            transition={{ duration: 1, ease: "easeInOut" }}
-            className="w-fit h-fit absolute
-            lg:-bottom-10 lg:right-[8%]"
-          >
-            {/* <Avatar /> */}
-          </motion.div>
-        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
-export default Home;
+export default About;

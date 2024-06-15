@@ -1,9 +1,7 @@
 // icons
 import {
   HiHome,
-  HiUser,
   HiViewColumns,
-  HiRectangleGroup,
   HiChatBubbleBottomCenterText,
   HiEnvelope,
 } from "react-icons/hi2";
@@ -11,16 +9,14 @@ import {
 // nav data
 export const navData = [
   { name: "home", path: "/", icon: <HiHome /> },
-  { name: "about", path: "/about", icon: <HiUser /> },
-  // { name: "services", path: "/services", icon: <HiRectangleGroup /> },
   { name: "work", path: "/work", icon: <HiViewColumns /> },
   {
-    name: "testimonials",
+    name: "Reviews",
     path: "/testimonials",
     icon: <HiChatBubbleBottomCenterText />,
   },
   {
-    name: "contact",
+    name: "Msg..",
     path: "/contact",
     icon: <HiEnvelope />,
   },
@@ -50,17 +46,11 @@ const Nav = () => {
             href={link.path}
           >
             {/* tooltip */}
-            <div className="absolute pr-14 -top-8 -right-[50%] translate-x-[50%] hidden xl:group-hover:flex capitalize">
-              <div className="bg-white relative flex text-primary items-center p-[6px] rounded-[3px]">
-                <div className="text-[12px] leading-none font-semibold">
+            <div className="absolute pr-14 -top-8 -right-[50%] translate-x-[50%] flex capitalize rounded-full">
+              <div className="bg-white/10 relative flex text-white items-center p-[6px] rounded-[3px]">
+                <div className="text-[12px] leading-none font-normal">
                   {link.name}
                 </div>
-
-                {/* traingle */}
-                <div
-                  className="border-solid border-l-white border-b-8 translate-x-[50%]
-              border-y-transparent border-x-[6px] border-r-0 absolute right-[50%] -bottom-2"
-                ></div>
               </div>
             </div>
             {/* Icon */}

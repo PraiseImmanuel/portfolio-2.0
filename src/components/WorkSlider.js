@@ -12,16 +12,16 @@ import Link from "next/link";
 // data
 const workSlides = [
   {
-    title: "https://fruity-plum.vercel.app/",
-    path: "/thumb-one.PNG",
+    title: "https://mira-ai-prx.vercel.app/",
+    path: "/mira.PNG",
+  },
+  {
+    title: "https://www.williamsobaedo.com.ng/books",
+    path: "/willams-obaedo.PNG",
   },
   {
     title: "https://electronic-gadgets.netlify.app/",
     path: "/thumb-two.jpg",
-  },
-  {
-    title: "https://advice-website.netlify.app/",
-    path: "/thumb-three.jpg",
   },
 ];
 
