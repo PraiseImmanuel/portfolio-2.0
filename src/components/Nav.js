@@ -16,7 +16,7 @@ export const navData = [
     icon: <HiChatBubbleBottomCenterText />,
   },
   {
-    name: "Msg..",
+    name: "Mail",
     path: "/contact",
     icon: <HiEnvelope />,
   },
@@ -35,7 +35,7 @@ const Nav = () => {
     >
       <div
         className="flex w-full items-center justify-between mx-auto
-        gap-y-10 px-4 py-5 max-w-[320px] 
+        gap-y-10 px-6 py-4 max-w-[320px] 
       bg-white/20 backdrop-blur-sm text-2xl rounded-full"
       >
         {navData.map((link, index) => (
@@ -45,16 +45,13 @@ const Nav = () => {
             key={index}
             href={link.path}
           >
-            {/* tooltip */}
-            <div className="absolute pr-14 -top-8 -right-[50%] translate-x-[50%] flex capitalize rounded-full">
-              <div className="bg-white/10 relative flex text-white items-center p-[6px] rounded-[3px]">
-                <div className="text-[12px] leading-none font-normal">
-                  {link.name}
-                </div>
+            <div className="flex items-center flex-col">
+              {/* Icon */}
+              <div>{link.icon}</div>
+              <div className="text-[12px] capitalize leading-none font-normal">
+                {link.name}
               </div>
             </div>
-            {/* Icon */}
-            <div>{link.icon}</div>
           </Link>
         ))}
       </div>
