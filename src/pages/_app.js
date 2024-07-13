@@ -6,9 +6,28 @@ import Transition from "../components/Transition";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Head from "next/head";
+import ReactGA from "react-ga";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
+  useEffect(() => {
+    ReactGA.initialize("G-MJYKME7XLY"); //
+
+    // Track initial page view
+    ReactGA.pageview(window.location.pathname);
+
+    // Log page view on route change
+    const handleRouteChange = (url) => {
+      ReactGA.pageview(url);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>
@@ -43,16 +62,6 @@ function MyApp({ Component, pageProps }) {
           name="twitter:image"
           content="https://res.cloudinary.com/dj25aashz/image/upload/v1720861636/Me_Bg_w4148c.png"
         />
-        {/* Global site tag (gtag.js) - Google Analytics */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-MJYKME7XLY"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-MJYKME7XLY');
-        </script>
       </Head>
       <ToastContainer limit={1} />
       <Layout>
