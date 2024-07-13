@@ -24,7 +24,7 @@ const Home = () => {
       repeat: Infinity,
       repeatType: "mirror",
     });
-  }, []);
+  }, [color]);
   return (
     <motion.div
       style={{ backgroundImage: isSmallScreen ? backgroundImage : undefined }}

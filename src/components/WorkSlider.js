@@ -36,11 +36,11 @@ const WorkSlider = () => {
     <div className="grid gap-8 grid-cols-12 mb-10 md:mb-0 items-center sm:justify-items-center lg:justify-items-start">
       {workSlides.map((image, index) => (
         <div
+          key={index}
           className="flex flex-col
           justify-center col-span-12 md:col-span-6 max-w-[300px] md:max-w-[350px]"
         >
           <Link
-            key={index}
             href={image.title}
             target="_blank"
             rel="noreferer noopener"
