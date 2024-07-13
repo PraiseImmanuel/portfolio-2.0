@@ -5,6 +5,8 @@ import Header from "../../components/Header";
 import { useState } from "react";
 import { api } from "../../lib/api/request";
 import { toast } from "react-toastify";
+import Socials, { links } from "../../components/Socials";
+import Link from "next/link";
 
 const Contact = () => {
   const [contactField, setContactField] = useState({
@@ -89,7 +91,7 @@ const Contact = () => {
               <input
                 type="text"
                 placeholder="Name"
-                className="input  focus:bg-transparent"
+                className="input focus:bg-transparent"
                 onChange={(e) => handleFieldChange(e)}
                 value={contactField.name}
                 name="name"
@@ -120,7 +122,7 @@ const Contact = () => {
             />
             <button
               type="submit"
-              className={`btn rounded-full border border-white/500 max-w-[150px] md:max-w-[170px]
+              className={`btn rounded-full border border-white/40  max-w-[150px] md:max-w-[170px]
               md:px-8 transition-all duration-300 flex items-center justify-center
               overflow-hidden hover:border-accent group ${
                 isLoading && "opacity-30"
@@ -128,18 +130,33 @@ const Contact = () => {
               disabled={isLoading}
             >
               <span
-                className="group-hover:-translate-y-[120px] group-hover:opacity-0
+                className="lg:group-hover:-translate-y-[120px] lg:group-hover:opacity-0
                 transition-all duration-500"
               >
                 {"Let's talk"}
               </span>
               <BsArrowRight
-                className="-translate-y-[120%] opacity-0 group-hover:flex
-                group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute
+                className="lg:-translate-y-[120%] opacity-0 group-hover:flex
+                lg:group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute
                 text-[22px]"
               />
             </button>
           </motion.form>
+          <div className="border-t border-white/10 mt-10 pt-10 lg:hidden">
+            <p className="uppercase mb-4">Social Handles</p>
+            <div className="flex items-center gap-x-8 text-2xl py-1 text-white/90">
+              {links.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.route}
+                  className="hover:text-accent transition-all duration-300 cursor-pointer"
+                  target="_blank"
+                >
+                  {item.svg}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,25 +1,23 @@
-// testimonial data
 const testimonialData = [
   {
-    image: "/t-avt-1.png",
-    name: "Anne Smith",
-    position: "Customer",
+    image: "/alabi.jpg",
+    name: "Alabi Abdulhafeez",
+    position: "Co-Founder - BridgePay",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "Praise is very attentive and intentional about his engineering deliverables. During my engagement and contract with him, he listened carefully and delivered beyond expectation.",
   },
   {
-    image: "/t-avt-2.png",
-    name: "Jane Doe",
-    position: "Customer",
+    image: "/charles.jpg",
+    name: "Charles Williams",
+    position: "Software Engineer - Fairmoney",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "Praise is a talented front-end developer who brings creativity and technical expertise to every project. His dedication and problem-solving skills make him an invaluable team member. He pays great attention to details and has great ability to bring design to life in a very responsive manner that can be viewed at different screen sizes.",
   },
   {
-    image: "/t-avt-3.png",
-    name: "Jhon Doe",
-    position: "Customer",
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+    image: "/aaron.jpg",
+    name: "Aniebiet Aaron",
+    position: "Senior Software Engineer - MISTECH GLOBAL",
+    message: `I have no hesitation recommending Immanuel, I have worked with him and I can attest that he his very dedicated, hardworking, creative and requires very little supervision to get assigned task done. Immanuel's expertise in Front-End Development is exceptional. He has great understanding of modern frameworks and consistently exceeds expectations with his innovative solutions.`,
   },
 ];
 import { FaQuoteLeft } from "react-icons/fa";
@@ -68,7 +66,7 @@ const TestimonialSlider = () => {
           {testimonialData.map((person, index) => (
             <div
               key={index}
-              className={`flex flex-col justify-center w-full px-2 min-w-[100%] text-center transition-all duration-300`}
+              className={`h-fit flex flex-col justify-center w-full px-2 min-w-[100%] text-center transition-all duration-300`}
               style={{ translate: `${-100 * currentIndex}%` }}
             >
               <div
@@ -85,7 +83,8 @@ const TestimonialSlider = () => {
                         src={person.image}
                         width={100}
                         height={100}
-                        alt=""
+                        alt="Client"
+                        className="w-[65px] md:w-[100px] h-[65px] md:h-[100px] rounded-full"
                       />
                     </div>
                     <div className="text-lg">{person.name}</div>

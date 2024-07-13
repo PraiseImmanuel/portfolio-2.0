@@ -7,17 +7,17 @@ import Header from "../../components/Header";
 
 const Work = () => {
   return (
-    <div className="min-h-[1100px] xl:min-h-screen bg-primary/30 text-center xl:text-left">
-      <div className="min-h-[1100px] xl:min-h-screen relative">
+    <div className="min-h-[1100px] lg:min-h-[100dvh] bg-primary/30 text-center xl:text-left">
+      <div className="min-h-[1100px] lg:min-h-[100dvh] relative pb-20">
         <Header />
         <div className="hidden sm:block">
           <Circles />
         </div>
         <Bulb />
         <div className="pt-5 md:pt-12 mx-auto container">
-          <div className="flex flex-col xl:flex-row gap-x-3">
+          <div className="flex flex-col xl:flex-row gap-4">
             <div
-              className="text-center flex xl:w-[30vw flex-col lg:text-left
+              className="text-center flex xl:w-[30vw] flex-col lg:text-left
               mb-4 xl:mb-0"
             >
               <motion.h2
@@ -35,7 +35,7 @@ const Work = () => {
                 initial="hidden"
                 animate="show"
                 exit="hidden"
-                className="mb-4 max-w-[400px] mx-auto lg:mx-0"
+                className="mb-4 max-w-[600px] lg:max-w-[400px] mx-auto lg:mx-0"
               >
                 I&apos;ve had the opportunity to work on several projects over
                 the last few years of my career. Feel free to explore some of

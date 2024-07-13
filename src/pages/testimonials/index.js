@@ -13,7 +13,7 @@ const Testimonial = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="h2 mb-8 xl:mb-0 text-center"
+          className="h2 mb-4 xl:mb-0 text-center"
         >
           Feedbacks
           <span className="text-accent"> resonates</span>

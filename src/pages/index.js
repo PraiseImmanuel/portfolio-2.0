@@ -65,12 +65,12 @@ const aboutData = [
     title: "experience",
     info: [
       {
-        title: "Software Engineer Intern - Paritie Innovation Hub",
-        stage: "Sept. 2023 - Present",
-      },
-      {
         title: "Frontend Developer - Zorfts Technologies",
         stage: "July 2023 - Present",
+      },
+      {
+        title: "Software Engineer Intern - Paritie Innovation Hub",
+        stage: "Sept. 2023 - June 2024",
       },
       {
         title: "Frontend Intern - Hotels.ng",
@@ -118,7 +118,7 @@ const About = () => {
                 animate="show"
                 exit="hidden"
                 variants={fadeIn("right", 0.2)}
-                className="h2 max-w-[580px] xl:max-w-[initial] "
+                className="h2 max-w-[580px] xl:max-w-[initial]"
               >
                 Turning <span className="text-accent">ideas</span> into digital
                 <span className="text-accent"> products</span>.
@@ -258,7 +258,7 @@ const About = () => {
                         {item.title}
                       </div>
                       <div className="hidden md:flex">-</div>
-                      <div className="font-[600]">{item.stage}</div>
+                      <div className="font-[300]">{item.stage}</div>
                       <div className="flex gap-x-4">
                         {item.icons?.map((icon, index) => (
                           <div key={index} className="text-white text-2xl">

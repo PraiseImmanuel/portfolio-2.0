@@ -1,19 +1,12 @@
 import Link from "next/link";
 import {
-  RiInstagramLine,
-  RiDribbbleLine,
-  RiGithubLine,
-  RiLinkedinBoxLine,
-  RiXboxLine,
-  RiTwitterXLine,
   RiTwitterXFill,
   RiGithubFill,
-  RiLinkedinFill,
   RiLinkedinBoxFill,
   RiWhatsappFill,
 } from "react-icons/ri";
 
-const links = [
+export const links = [
   {
     svg: <RiLinkedinBoxFill />,
     route: "https://www.linkedin.com/in/praise-immanuel-919b99209/",
