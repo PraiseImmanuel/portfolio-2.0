@@ -5,11 +5,44 @@ import { motion, AnimatePresence } from "framer-motion";
 import Transition from "../components/Transition";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
     <>
+      <Head>
+        <link rel="icon" href="/favicon.png" />
+        <title>Praise Immanuel - Web Developer</title>
+        <meta
+          name="description"
+          content="Praise Immanuel - Portfolio website"
+        />
+        <meta
+          name="keywords"
+          content="PraiseImmanuel, Web Developer, Reactjs"
+        />
+        <meta property="og:title" content="Praise Immanuel - Web Developer" />
+        <meta
+          property="og:description"
+          content="Praise Immanuel - Portfolio website"
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dj25aashz/image/upload/v1720861636/Me_Bg_w4148c.png"
+        />
+        <meta property="og:url" content="https://praiseimmanuel.vercel.app" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Praise Immanuel - Web Developer" />
+        <meta
+          name="twitter:description"
+          content="Praise Immanuel - Portfolio website"
+        />
+        <meta
+          name="twitter:image"
+          content="https://res.cloudinary.com/dj25aashz/image/upload/v1720861636/Me_Bg_w4148c.png"
+        />
+      </Head>
       <ToastContainer limit={1} />
       <Layout>
         <AnimatePresence mode="wait">
