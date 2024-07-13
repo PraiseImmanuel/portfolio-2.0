@@ -100,7 +100,7 @@ import { fadeIn } from "../../variants";
 import Header from "../components/Header";
 const About = () => {
   const [itemIndex, setItemIndex] = useState(0);
-  console.log(itemIndex);
+
   return (
     <div className="min-h-[1100px] md:min-h-[950px] xl:min-h-screen bg-primary/30 text-center xl:text-left">
       <div className="min-h-[1100px] md:min-h-[950px] xl:min-h-screen relative">
@@ -130,11 +130,11 @@ const About = () => {
                 variants={fadeIn("right", 0.4)}
                 className="max-w-[540px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
               >
-                Hello there! I am Praise Immanuel - a web developer with a knack
-                for turning code into captivating experiences. With a background
-                in Pure and Applied Mathematics and over three years experience.
-                I bring a unique blend of creative flair and analytical prowess
-                to every project.
+                Hello there! I am Praise Immanuel, a web developer skilled in
+                transforming code into engaging experiences. With a solid
+                foundation in Pure and Applied Mathematics and over three years
+                of professional experience, I excel at blending creative flair
+                with analytical precision in every project.
               </motion.p>
               <motion.p
                 initial="hidden"
@@ -143,11 +143,12 @@ const About = () => {
                 variants={fadeIn("right", 0.4)}
                 className="max-w-[500px] xl:-mt-7 mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
               >
-                I prioritize quality and adhere to industry standards, ensuring
-                the responsiveness of web apps across devices with a
-                mobile-first approach. I have rich experience with ReactJS using
-                TypeScript and Next.js. I am currently seeking intermediate dev
-                roles.
+                I prioritize delivering high-quality work by adhering to
+                industry standards and ensuring seamless responsiveness across
+                all devices with a mobile-first approach. My expertise lies in
+                ReactJS, TypeScript, and Next.js. I am actively seeking
+                intermediate developer roles to further my career and contribute
+                to impactful projects.
               </motion.p>
             </div>
             <div className="flex-1 transition-all">

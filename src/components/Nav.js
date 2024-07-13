@@ -44,6 +44,7 @@ const Nav = () => {
             relative flex items-center group hover:text-accent transition-all duration-300`}
             key={index}
             href={link.path}
+            scroll={true}
           >
             <div className="flex items-center flex-col">
               {/* Icon */}

@@ -18,7 +18,7 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const handleFieldChange = (e) => {
     const { name, value } = e.target;
-    console.log(contactField);
+
     setContactField((prevState) => ({
       ...prevState,
       [name]: value,
@@ -28,6 +28,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     setIsLoading(true);
     e.preventDefault();
+
     if (
       contactField.email === "" ||
       contactField.message === "" ||
@@ -38,6 +39,7 @@ const Contact = () => {
       setIsLoading(false);
       return;
     }
+    toast.warning("This might take a while. Please Wait...");
     try {
       const response = await api.post(
         "https://portfolio-email-sender-q5m2.onrender.com/send-email",
@@ -129,17 +131,23 @@ const Contact = () => {
               }`}
               disabled={isLoading}
             >
-              <span
-                className="lg:group-hover:-translate-y-[120px] lg:group-hover:opacity-0
+              {!isLoading && (
+                <span>
+                  <span
+                    className="group-hover:-translate-y-[120px] group-hover:opacity-0
                 transition-all duration-500"
-              >
-                {"Let's talk"}
-              </span>
-              <BsArrowRight
-                className="lg:-translate-y-[120%] opacity-0 group-hover:flex
-                lg:group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute
+                  >
+                    {"Let's talk"}
+                  </span>
+                  <BsArrowRight
+                    className="-translate-y-[120%] opacity-0 group-hover:flex
+                group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute
                 text-[22px]"
-              />
+                  />
+                </span>
+              )}
+
+              {isLoading && <span>Loading..</span>}
             </button>
           </motion.form>
           <div className="border-t border-white/10 mt-10 pt-10 lg:hidden">
