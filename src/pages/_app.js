@@ -43,6 +43,16 @@ function MyApp({ Component, pageProps }) {
           name="twitter:image"
           content="https://res.cloudinary.com/dj25aashz/image/upload/v1720861636/Me_Bg_w4148c.png"
         />
+        {/* Global site tag (gtag.js) - Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-MJYKME7XLY"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag('js', new Date()); gtag('config', 'G-MJYKME7XLY');
+        </script>
       </Head>
       <ToastContainer limit={1} />
       <Layout>
