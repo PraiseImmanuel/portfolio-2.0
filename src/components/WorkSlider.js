@@ -12,7 +12,7 @@ import Link from "next/link";
 // data
 const workSlides = [
   {
-    title: "https://mira-ai-prx.vercel.app/",
+    title: "https://mira.provarex.com/",
     path: "/mira.PNG",
     technologies: "NextJS, Typescript, Redux Toolkit, Tailwindcss",
     project: "Mira Ai",
