@@ -17,12 +17,12 @@ const workSlides = [
     technologies: "NextJS, Typescript, Redux Toolkit, Tailwindcss",
     project: "Mira Ai",
   },
-  {
-    title: "https://electronic-gadgets.netlify.app/",
-    path: "/thumb-two.jpg",
-    technologies: "NextJS, Typescript, Redux Toolkit, Styled-Component",
-    project: "Ecommerce Template",
-  },
+  // {
+  //   title: "https://electronic-gadgets.netlify.app/",
+  //   path: "/thumb-two.jpg",
+  //   technologies: "NextJS, Typescript, Redux Toolkit, Styled-Component",
+  //   project: "Ecommerce Template",
+  // },
   {
     title: "https://www.williamsobaedo.com.ng/books",
     path: "/willams-obaedo.PNG",
