@@ -64,6 +64,10 @@ const aboutData = [
   {
     title: "experience",
     info: [
+       {
+        title: "Frontend Developer - BridgePay",
+        stage: "Nov. 2024 - Present",
+      },
       {
         title: "Frontend Developer - Zorfts Technologies",
         stage: "July 2023 - Present",
@@ -132,7 +136,7 @@ const About = () => {
               >
                 Hello there! I am Praise Immanuel, a web developer skilled in
                 transforming code into engaging experiences. With a solid
-                foundation in Pure and Applied Mathematics and over three years
+                foundation in Pure and Applied Mathematics and about four years
                 of professional experience, I excel at blending creative flair
                 with analytical precision in every project.
               </motion.p>
